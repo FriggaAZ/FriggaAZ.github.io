@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yapei97.com/"/>
-  <updated>2019-07-07T01:34:03.153Z</updated>
+  <updated>2019-07-07T02:30:15.623Z</updated>
   <id>http://yapei97.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Horn</title>
+    <link href="http://yapei97.com/2019/07/07/The-FogHorn/"/>
+    <id>http://yapei97.com/2019/07/07/The-FogHorn/</id>
+    <published>2019-07-07T02:21:21.000Z</published>
+    <updated>2019-07-07T02:30:15.623Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;浓雾号角-The-Fog-Horn&quot;&gt;&lt;a href=&quot;#浓雾号角-The-Fog-Horn&quot; class=&quot;headerlink&quot; title=&quot;浓雾号角-The Fog Horn&quot;&gt;&lt;/a&gt;浓雾号角-The Fog
+        
+      
+    
+    </summary>
+    
+    
+      <category term="摘记" scheme="http://yapei97.com/tags/%E6%91%98%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
