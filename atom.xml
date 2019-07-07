@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>人生印记</title>
+  
+  <subtitle>Write Code, Blow Minds.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yapei97.com/"/>
+  <updated>2019-07-07T01:34:03.153Z</updated>
+  <id>http://yapei97.com/</id>
+  
+  <author>
+    <name>周雅培</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yapei97.com/2019/07/07/hello-world/"/>
+    <id>http://yapei97.com/2019/07/07/hello-world/</id>
+    <published>2019-07-07T01:34:03.153Z</published>
+    <updated>2019-07-07T01:34:03.153Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
