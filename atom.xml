@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yapei97.com/"/>
-  <updated>2019-07-08T08:36:48.909Z</updated>
+  <updated>2019-07-10T13:48:57.771Z</updated>
   <id>http://www.yapei97.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微软开源AI故障诊断和可视化工具</title>
+    <link href="http://www.yapei97.com/2019/07/10/TensorWatch/"/>
+    <id>http://www.yapei97.com/2019/07/10/TensorWatch/</id>
+    <published>2019-07-10T13:45:43.000Z</published>
+    <updated>2019-07-10T13:48:57.771Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;微软开源-AI-故障诊断和可视化工具&quot;&gt;&lt;a href=&quot;#微软开源-AI-故障诊断和可视化工具&quot; class=&quot;headerlink&quot; title=&quot;微软开源 AI 故障诊断和可视化工具&quot;&gt;&lt;/a&gt;&lt;strong&gt;微软开源 AI
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DeepLearning" scheme="http://www.yapei97.com/tags/DeepLearning/"/>
+    
+      <category term="AI" scheme="http://www.yapei97.com/tags/AI/"/>
+    
+      <category term="译文" scheme="http://www.yapei97.com/tags/%E8%AF%91%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>Python套接字编程</title>
