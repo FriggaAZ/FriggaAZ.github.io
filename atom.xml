@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yapei97.com/"/>
-  <updated>2019-07-10T13:48:57.771Z</updated>
+  <updated>2019-08-19T03:02:26.743Z</updated>
   <id>http://www.yapei97.com/</id>
   
   <author>
@@ -15,6 +15,181 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么要使用封装继承多态?</title>
+    <link href="http://www.yapei97.com/2019/08/19/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/"/>
+    <id>http://www.yapei97.com/2019/08/19/为什么要使用封装继承多态/</id>
+    <published>2019-08-19T02:56:56.000Z</published>
+    <updated>2019-08-19T03:02:26.743Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;封装、继承、多态&quot;&gt;&lt;a href=&quot;#封装、继承、多态&quot; class=&quot;headerlink&quot; title=&quot;封装、继承、多态&quot;&gt;&lt;/a&gt;封装、继承、多态&lt;/h2&gt;&lt;p&gt;封装、继承、多态 是面向对象的3大特性&lt;/p&gt;
+&lt;h2 id=&quot;为啥要封装&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+      <category term="面向对象" scheme="http://www.yapei97.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>魔法属性</title>
+    <link href="http://www.yapei97.com/2019/07/22/%E9%AD%94%E6%B3%95%E5%B1%9E%E6%80%A7/"/>
+    <id>http://www.yapei97.com/2019/07/22/魔法属性/</id>
+    <published>2019-07-22T03:20:22.000Z</published>
+    <updated>2019-08-19T03:27:28.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;魔法属性&quot;&gt;&lt;a href=&quot;#魔法属性&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>静态方法和类方法</title>
+    <link href="http://www.yapei97.com/2019/07/21/%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E5%92%8C%E7%B1%BB%E6%96%B9%E6%B3%95/"/>
+    <id>http://www.yapei97.com/2019/07/21/静态方法和类方法/</id>
+    <published>2019-07-20T23:04:17.000Z</published>
+    <updated>2019-08-19T03:06:37.490Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;静态方法和类方法&quot;&gt;&lt;a href=&quot;#静态方法和类方法&quot; class=&quot;headerlink&quot; title=&quot;静态方法和类方法&quot;&gt;&lt;/a&gt;静态方法和类方法&lt;/h2&gt;&lt;h3 id=&quot;1-类属性、实例属性&quot;&gt;&lt;a href=&quot;#1-类属性、实例属性&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>私有化</title>
+    <link href="http://www.yapei97.com/2019/07/21/%E7%A7%81%E6%9C%89%E5%8C%96/"/>
+    <id>http://www.yapei97.com/2019/07/21/私有化/</id>
+    <published>2019-07-20T22:54:45.000Z</published>
+    <updated>2019-08-19T02:55:57.614Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;私有化&quot;&gt;&lt;a href=&quot;#私有化&quot; class=&quot;headerlink&quot; title=&quot;私有化&quot;&gt;&lt;/a&gt;私有化&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;xx: 公有变量&lt;/li&gt;
+&lt;li&gt;_x: 单前置下划线,私有化属性或方法，from somemodule
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的深拷贝和浅拷贝</title>
+    <link href="http://www.yapei97.com/2019/07/20/Python%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/"/>
+    <id>http://www.yapei97.com/2019/07/20/Python的深拷贝和浅拷贝/</id>
+    <published>2019-07-19T22:43:13.000Z</published>
+    <updated>2019-08-19T02:54:04.089Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;深拷贝、浅拷贝&quot;&gt;&lt;a href=&quot;#深拷贝、浅拷贝&quot; class=&quot;headerlink&quot; title=&quot;深拷贝、浅拷贝&quot;&gt;&lt;/a&gt;深拷贝、浅拷贝&lt;/h2&gt;&lt;h3 id=&quot;1-浅拷贝&quot;&gt;&lt;a href=&quot;#1-浅拷贝&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GIL</title>
+    <link href="http://www.yapei97.com/2019/07/19/GIL/"/>
+    <id>http://www.yapei97.com/2019/07/19/GIL/</id>
+    <published>2019-07-19T02:38:03.000Z</published>
+    <updated>2019-08-19T02:39:27.952Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;GIL（全局解释器锁）&quot;&gt;&lt;a href=&quot;#GIL（全局解释器锁）&quot; class=&quot;headerlink&quot; title=&quot;GIL（全局解释器锁）&quot;&gt;&lt;/a&gt;GIL（全局解释器锁）&lt;/h2&gt;&lt;h4 id=&quot;GIL面试题如下&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多继承以及MRO顺序</title>
+    <link href="http://www.yapei97.com/2019/07/19/%E5%A4%9A%E7%BB%A7%E6%89%BF%E4%BB%A5%E5%8F%8AMRO%E9%A1%BA%E5%BA%8F/"/>
+    <id>http://www.yapei97.com/2019/07/19/多继承以及MRO顺序/</id>
+    <published>2019-07-18T22:02:59.000Z</published>
+    <updated>2019-08-19T03:07:15.952Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;多继承以及MRO顺序&quot;&gt;&lt;a href=&quot;#多继承以及MRO顺序&quot; class=&quot;headerlink&quot; title=&quot;多继承以及MRO顺序&quot;&gt;&lt;/a&gt;多继承以及MRO顺序&lt;/h2&gt;&lt;h2 id=&quot;1-单独调用父类的方法&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+      <category term="多继承" scheme="http://www.yapei97.com/tags/%E5%A4%9A%E7%BB%A7%E6%89%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>微软开源AI故障诊断和可视化工具</title>
@@ -45,9 +220,57 @@
   </entry>
   
   <entry>
+    <title>Property属性的应用</title>
+    <link href="http://www.yapei97.com/2019/06/03/Property%E5%B1%9E%E6%80%A7%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+    <id>http://www.yapei97.com/2019/06/03/Property属性的应用/</id>
+    <published>2019-06-02T23:18:25.000Z</published>
+    <updated>2019-08-19T03:19:42.285Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;property属性的应用&quot;&gt;&lt;a href=&quot;#property属性的应用&quot; class=&quot;headerlink&quot; title=&quot;property属性的应用&quot;&gt;&lt;/a&gt;property属性的应用&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Property属性</title>
+    <link href="http://www.yapei97.com/2019/06/02/Property%E5%B1%9E%E6%80%A7/"/>
+    <id>http://www.yapei97.com/2019/06/02/Property属性/</id>
+    <published>2019-06-01T22:07:48.000Z</published>
+    <updated>2019-08-19T03:11:52.079Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;property属性&quot;&gt;&lt;a href=&quot;#property属性&quot; class=&quot;headerlink&quot; title=&quot;property属性&quot;&gt;&lt;/a&gt;property属性&lt;/h2&gt;&lt;h3 id=&quot;1-什么是property属性&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.yapei97.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python套接字编程</title>
-    <link href="http://www.yapei97.com/2018/02/08/%EF%BC%B0ython%E5%A5%97%E6%8E%A5%E5%AD%97%E7%BC%96%E7%A8%8B/"/>
-    <id>http://www.yapei97.com/2018/02/08/Ｐython套接字编程/</id>
+    <link href="http://www.yapei97.com/2018/02/08/Python%E5%A5%97%E6%8E%A5%E5%AD%97%E7%BC%96%E7%A8%8B/"/>
+    <id>http://www.yapei97.com/2018/02/08/Python套接字编程/</id>
     <published>2018-02-08T08:00:19.000Z</published>
     <updated>2019-07-08T08:36:48.909Z</updated>
     
@@ -125,7 +348,7 @@
     <link href="http://www.yapei97.com/2016/06/09/%E6%B5%93%E9%9B%BE%E5%8F%B7%E8%A7%92/"/>
     <id>http://www.yapei97.com/2016/06/09/浓雾号角/</id>
     <published>2016-06-08T16:21:21.000Z</published>
-    <updated>2019-07-08T08:05:19.991Z</updated>
+    <updated>2019-08-19T03:24:18.609Z</updated>
     
     <summary type="html">
     

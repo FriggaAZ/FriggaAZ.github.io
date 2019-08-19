@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="周雅培"><title>魔法属性 · 人生印记</title><meta name="description" content="魔法属性无论人或事物往往都有不按套路出牌的情况，Python的类属性也是如此，存在着一些具有特殊含义的属性，详情如下：
+1. __doc__
+表示类的描述信息
+
+class Foo:
+    &quot;&quot;&quot; 描述类信息，这是用于看片的神奇 &quot;&quot;&quot;
+    def func(self):
+        pa"><meta name="keywords" content><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Write Code, Blow Minds.</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">雅培の人生印记</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/FriggaAZ" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a><a href="https://www.instagram.com/__limbo" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram">&nbsp;</i></a><a href="http://www.yapei97.com/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://www.yapei97.com" rel="noopener noreferrer">周雅培</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;</p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>魔法属性</a></p><p class="post-meta"><span class="date meta-item">发布于&nbsp;2019-07-22</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/Python/" title="Python" class="a-tag">Python</a><span>&nbsp;</span></span></p><p class="post-abstract"></p><h2 id="魔法属性"><a href="#魔法属性" class="headerlink" title="魔法属性"></a>魔法属性</h2><p>无论人或事物往往都有不按套路出牌的情况，Python的类属性也是如此，存在着一些具有特殊含义的属性，详情如下：</p>
+<h3 id="1-doc"><a href="#1-doc" class="headerlink" title="1. __doc__"></a>1. __doc__</h3><ul>
+<li>表示类的描述信息</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" 描述类信息，这是用于看片的神奇 """</span>
+    <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>Foo<span class="token punctuation">.</span>__doc__<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#输出：类的描述信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-module-和-class"><a href="#2-module-和-class" class="headerlink" title="2. __module__ 和 __class__"></a>2. __module__ 和 __class__</h3><ul>
+<li><strong>module</strong> 表示当前操作的对象在那个模块</li>
+<li><strong>class</strong> 表示当前操作的对象的类是什么</li>
+</ul>
+<pre><code>test.py
+# -*- coding:utf-8 -*-
+
+class Person(object):
+    def __init__(self):
+        self.name = &#39;laowang&#39;
+main.py
+from test import Person
+
+obj = Person()
+print(obj.__module__)  # 输出 test 即：输出模块
+print(obj.__class__)  # 输出 test.Person 即：输出类</code></pre><h3 id="3-init"><a href="#3-init" class="headerlink" title="3. __init__"></a>3. __init__</h3><ul>
+<li>初始化方法，通过类创建对象时，自动触发执行</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">18</span>
+
+
+obj <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">'laowang'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 自动执行类中的 __init__ 方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-del"><a href="#4-del" class="headerlink" title="4. __del__"></a>4. __del__</h3><ul>
+<li>当对象在内存中被释放时，自动触发执行。</li>
+</ul>
+<p>注：此方法一般无须定义，因为Python是一门高级语言，程序员在使用时无需关心内存的分配和释放，因为此工作都是交给Python解释器来执行，所以，<strong>del</strong>的调用是由解释器在进行垃圾回收时自动触发执行的。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__del__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-call"><a href="#5-call" class="headerlink" title="5. __call__"></a>5. __call__</h3><ul>
+<li>对象后面加括号，触发执行。</li>
+</ul>
+<p>注：<strong>init</strong>方法的执行是由创建对象触发的，即：<code>对象 = 类名()</code> ；而对于 <strong>call</strong> 方法的执行是由对象后加括号触发的，即：<code>对象()</code> 或者 <code>类()()</code></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'__call__'</span><span class="token punctuation">)</span>
+
+
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 执行 __init__</span>
+obj<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 执行 __call__</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-dict"><a href="#6-dict" class="headerlink" title="6. __dict__"></a>6. __dict__</h3><ul>
+<li>类或对象中的所有属性</li>
+</ul>
+<p>类的实例属性属于对象；类中的类属性和方法等属于类，即：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Province</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    country <span class="token operator">=</span> <span class="token string">'China'</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>count <span class="token operator">=</span> count
+
+    <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'func'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 获取类的属性，即：类属性、方法、</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Province<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出：{'__dict__': &lt;attribute '__dict__' of 'Province' objects>, '__module__': '__main__', 'country': 'China', '__doc__': None, '__weakref__': &lt;attribute '__weakref__' of 'Province' objects>, 'func': &lt;function Province.func at 0x101897950>, '__init__': &lt;function Province.__init__ at 0x1018978c8>}</span>
+
+obj1 <span class="token operator">=</span> Province<span class="token punctuation">(</span><span class="token string">'山东'</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 获取 对象obj1 的属性</span>
+<span class="token comment" spellcheck="true"># 输出：{'count': 10000, 'name': '山东'}</span>
+
+obj2 <span class="token operator">=</span> Province<span class="token punctuation">(</span><span class="token string">'山西'</span><span class="token punctuation">,</span> <span class="token number">20000</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj2<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 获取 对象obj1 的属性</span>
+<span class="token comment" spellcheck="true"># 输出：{'count': 20000, 'name': '山西'}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-str"><a href="#7-str" class="headerlink" title="7. __str__"></a>7. __str__</h3><ul>
+<li>如果一个类中定义了<strong>str</strong>方法，那么在打印 对象 时，默认输出该方法的返回值。</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'laowang'</span>
+
+
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出：laowang</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="8、-getitem-、-setitem-、-delitem"><a href="#8、-getitem-、-setitem-、-delitem" class="headerlink" title="8、__getitem__、__setitem__、__delitem__"></a>8、__getitem__、__setitem__、__delitem__</h3><ul>
+<li>用于索引操作，如字典。以上分别表示获取、设置、删除数据</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># -*- coding:utf-8 -*-</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'__getitem__'</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__setitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'__setitem__'</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__delitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'__delitem__'</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+
+
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+result <span class="token operator">=</span> obj<span class="token punctuation">[</span><span class="token string">'k1'</span><span class="token punctuation">]</span>      <span class="token comment" spellcheck="true"># 自动触发执行 __getitem__</span>
+obj<span class="token punctuation">[</span><span class="token string">'k2'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'laowang'</span>   <span class="token comment" spellcheck="true"># 自动触发执行 __setitem__</span>
+<span class="token keyword">del</span> obj<span class="token punctuation">[</span><span class="token string">'k1'</span><span class="token punctuation">]</span>           <span class="token comment" spellcheck="true"># 自动触发执行 __delitem__</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9、-getslice-、-setslice-、-delslice"><a href="#9、-getslice-、-setslice-、-delslice" class="headerlink" title="9、__getslice__、__setslice__、__delslice__"></a>9、__getslice__、__setslice__、__delslice__</h3><ul>
+<li>该三个方法用于分片操作，如：列表</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># -*- coding:utf-8 -*-</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__getslice__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'__getslice__'</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__setslice__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> sequence<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'__setslice__'</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__delslice__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'__delslice__'</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+obj<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span>                   <span class="token comment" spellcheck="true"># 自动触发执行 __getslice__</span>
+obj<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 自动触发执行 __setslice__</span>
+<span class="token keyword">del</span> obj<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>                <span class="token comment" spellcheck="true"># 自动触发执行 __delslice__</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p></p></div><div class="share"><span>分享到</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=http://www.yapei97.com/2019/07/22/魔法属性/%20人生印记%20魔法属性" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2019/08/19/为什么要使用封装继承多态/" title="为什么要使用封装继承多态?"><i class="fa fa-angle-double-left"></i>&nbsp;上一篇: 为什么要使用封装继承多态?</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2019/07/21/静态方法和类方法/" title="静态方法和类方法">下一篇: 静态方法和类方法&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div><div id="lv-container" data-id="city" data-uid="MTAyMC80NTE2Ni8yMTY4Mw=="><script type="text/javascript">(function (d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') {
+        return;
+    }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script><noscript> Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://www.yapei97.com" rel="noopener noreferrer">周雅培</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;</p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

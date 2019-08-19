@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="周雅培"><title>Property属性 · 人生印记</title><meta name="description" content="property属性1. 什么是property属性一种用起来像是使用的实例属性一样的特殊属性，可以对应于某个方法
+# ############### 定义 ###############
+class Foo:
+    def func(self):
+        pass
+
+    # 定义pr"><meta name="keywords" content><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Write Code, Blow Minds.</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">雅培の人生印记</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/FriggaAZ" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a><a href="https://www.instagram.com/__limbo" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram">&nbsp;</i></a><a href="http://www.yapei97.com/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://www.yapei97.com" rel="noopener noreferrer">周雅培</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;</p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Property属性</a></p><p class="post-meta"><span class="date meta-item">发布于&nbsp;2019-06-02</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/Python/" title="Python" class="a-tag">Python</a><span>&nbsp;</span></span></p><p class="post-abstract"></p><h2 id="property属性"><a href="#property属性" class="headerlink" title="property属性"></a>property属性</h2><h3 id="1-什么是property属性"><a href="#1-什么是property属性" class="headerlink" title="1. 什么是property属性"></a>1. 什么是property属性</h3><p>一种用起来像是使用的实例属性一样的特殊属性，可以对应于某个方法</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ############### 定义 ###############</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token comment" spellcheck="true"># 定义property属性</span>
+    @property
+    <span class="token keyword">def</span> <span class="token function">prop</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+<span class="token comment" spellcheck="true"># ############### 调用 ###############</span>
+foo_obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+foo_obj<span class="token punctuation">.</span>func<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 调用实例方法</span>
+foo_obj<span class="token punctuation">.</span>prop  <span class="token comment" spellcheck="true"># 调用property属性</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/2019/06/02/Property属性/QQ20171025-211026@2x.png" alt="img"></p>
+<h5 id="property属性的定义和调用要注意以下几点："><a href="#property属性的定义和调用要注意以下几点：" class="headerlink" title="property属性的定义和调用要注意以下几点："></a>property属性的定义和调用要注意以下几点：</h5><ul>
+<li><p>定义时，在实例方法的基础上添加 @property 装饰器；并且仅有一个self参数</p>
+</li>
+<li><p>调用时，无需括号</p>
+<pre class="line-numbers language-python"><code class="language-python">  方法：foo_obj<span class="token punctuation">.</span>func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  property属性：foo_obj<span class="token punctuation">.</span>prop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="2-简单的实例"><a href="#2-简单的实例" class="headerlink" title="2. 简单的实例"></a>2. 简单的实例</h3><blockquote>
+<p>对于京东商城中显示电脑主机的列表页面，每次请求不可能把数据库中的所有内容都显示到页面上，而是通过分页的功能局部显示，所以在向数据库中请求数据时就要显示的指定获取从第m条到第n条的所有数据 这个分页的功能包括：</p>
+<ul>
+<li>根据用户请求的当前页和总数据条数计算出 m 和 n</li>
+<li>根据m 和 n 去数据库中请求数据 </li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ############### 定义 ###############</span>
+<span class="token keyword">class</span> <span class="token class-name">Pager</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> current_page<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 用户当前请求的页码（第一页、第二页...）</span>
+        self<span class="token punctuation">.</span>current_page <span class="token operator">=</span> current_page
+        <span class="token comment" spellcheck="true"># 每页默认显示10条数据</span>
+        self<span class="token punctuation">.</span>per_items <span class="token operator">=</span> <span class="token number">10</span> 
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">start</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        val <span class="token operator">=</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>current_page <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>per_items
+        <span class="token keyword">return</span> val
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">end</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        val <span class="token operator">=</span> self<span class="token punctuation">.</span>current_page <span class="token operator">*</span> self<span class="token punctuation">.</span>per_items
+        <span class="token keyword">return</span> val
+
+<span class="token comment" spellcheck="true"># ############### 调用 ###############</span>
+p <span class="token operator">=</span> Pager<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>start  <span class="token comment" spellcheck="true"># 就是起始值，即：m</span>
+p<span class="token punctuation">.</span>end  <span class="token comment" spellcheck="true"># 就是结束值，即：n</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="从上述可见"><a href="#从上述可见" class="headerlink" title="从上述可见"></a>从上述可见</h4><ul>
+<li>Python的property属性的功能是：property属性内部进行一系列的逻辑计算，最终将计算结果返回。</li>
+</ul>
+<h3 id="3-property属性的有两种方式"><a href="#3-property属性的有两种方式" class="headerlink" title="3. property属性的有两种方式"></a>3. property属性的有两种方式</h3><ul>
+<li>装饰器 即：在方法上应用装饰器</li>
+<li>类属性 即：在类中定义值为property对象的类属性</li>
+</ul>
+<h4 id="3-1-装饰器方式"><a href="#3-1-装饰器方式" class="headerlink" title="3.1 装饰器方式"></a>3.1 装饰器方式</h4><p>在类的实例方法上应用@property装饰器</p>
+<p>Python中的类有<code>经典类</code>和<code>新式类</code>，<code>新式类</code>的属性比<code>经典类</code>的属性丰富。（ 如果类继object，那么该类是新式类 ）</p>
+<h4 id="经典类，具有一种-property装饰器"><a href="#经典类，具有一种-property装饰器" class="headerlink" title="经典类，具有一种@property装饰器"></a>经典类，具有一种@property装饰器</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ############### 定义 ###############    </span>
+<span class="token keyword">class</span> <span class="token class-name">Goods</span><span class="token punctuation">:</span>
+    @property
+    <span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"laowang"</span>
+<span class="token comment" spellcheck="true"># ############### 调用 ###############</span>
+obj <span class="token operator">=</span> Goods<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result <span class="token operator">=</span> obj<span class="token punctuation">.</span>price  <span class="token comment" spellcheck="true"># 自动执行 @property 修饰的 price 方法，并获取方法的返回值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="新式类，具有三种-property装饰器"><a href="#新式类，具有三种-property装饰器" class="headerlink" title="新式类，具有三种@property装饰器"></a>新式类，具有三种@property装饰器</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#coding=utf-8</span>
+<span class="token comment" spellcheck="true"># ############### 定义 ###############</span>
+<span class="token keyword">class</span> <span class="token class-name">Goods</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""python3中默认继承object类
+        以python2、3执行此程序的结果不同，因为只有在python3中才有@xxx.setter  @xxx.deleter
+    """</span>
+    @property
+    <span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'@property'</span><span class="token punctuation">)</span>
+
+    @price<span class="token punctuation">.</span>setter
+    <span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'@price.setter'</span><span class="token punctuation">)</span>
+
+    @price<span class="token punctuation">.</span>deleter
+    <span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'@price.deleter'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># ############### 调用 ###############</span>
+obj <span class="token operator">=</span> Goods<span class="token punctuation">(</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>price          <span class="token comment" spellcheck="true"># 自动执行 @property 修饰的 price 方法，并获取方法的返回值</span>
+obj<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">123</span>    <span class="token comment" spellcheck="true"># 自动执行 @price.setter 修饰的 price 方法，并将  123 赋值给方法的参数</span>
+<span class="token keyword">del</span> obj<span class="token punctuation">.</span>price      <span class="token comment" spellcheck="true"># 自动执行 @price.deleter 修饰的 price 方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li>经典类中的属性只有一种访问方式，其对应被 @property 修饰的方法</li>
+<li>新式类中的属性有三种访问方式，并分别对应了三个被@property、@方法名.setter、@方法名.deleter修饰的方法</li>
+</ul>
+<p>由于新式类中具有三种访问方式，我们可以根据它们几个属性的访问特点，分别将三个方法定义为对同一个属性：获取、修改、删除</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Goods</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 原价</span>
+        self<span class="token punctuation">.</span>original_price <span class="token operator">=</span> <span class="token number">100</span>
+        <span class="token comment" spellcheck="true"># 折扣</span>
+        self<span class="token punctuation">.</span>discount <span class="token operator">=</span> <span class="token number">0.8</span>
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 实际价格 = 原价 * 折扣</span>
+        new_price <span class="token operator">=</span> self<span class="token punctuation">.</span>original_price <span class="token operator">*</span> self<span class="token punctuation">.</span>discount
+        <span class="token keyword">return</span> new_price
+
+    @price<span class="token punctuation">.</span>setter
+    <span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>original_price <span class="token operator">=</span> value
+
+    @price<span class="token punctuation">.</span>deleter
+    <span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">del</span> self<span class="token punctuation">.</span>original_price
+
+obj <span class="token operator">=</span> Goods<span class="token punctuation">(</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>price         <span class="token comment" spellcheck="true"># 获取商品价格</span>
+obj<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">200</span>   <span class="token comment" spellcheck="true"># 修改商品原价</span>
+<span class="token keyword">del</span> obj<span class="token punctuation">.</span>price     <span class="token comment" spellcheck="true"># 删除商品原价</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-类属性方式，创建值为property对象的类属性"><a href="#3-2-类属性方式，创建值为property对象的类属性" class="headerlink" title="3.2 类属性方式，创建值为property对象的类属性"></a>3.2 类属性方式，创建值为property对象的类属性</h4><ul>
+<li>当使用类属性的方式创建property属性时，<code>经典类</code>和<code>新式类</code>无区别</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_bar</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'laowang'</span>
+
+    BAR <span class="token operator">=</span> property<span class="token punctuation">(</span>get_bar<span class="token punctuation">)</span>
+
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+reuslt <span class="token operator">=</span> obj<span class="token punctuation">.</span>BAR  <span class="token comment" spellcheck="true"># 自动调用get_bar方法，并获取方法的返回值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>reuslt<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>property方法中有个四个参数</p>
+<ul>
+<li>第一个参数是方法名，调用 对象.属性 时自动触发执行方法</li>
+<li>第二个参数是方法名，调用 对象.属性 ＝ XXX 时自动触发执行方法</li>
+<li>第三个参数是方法名，调用 del 对象.属性 时自动触发执行方法</li>
+<li>第四个参数是字符串，调用 对象.属性.<strong>doc</strong> ，此参数是该属性的描述信息</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#coding=utf-8</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_bar</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"getter..."</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">'laowang'</span>
+
+    <span class="token keyword">def</span> <span class="token function">set_bar</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+        <span class="token triple-quoted-string string">"""必须两个参数"""</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"setter..."</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">'set value'</span> <span class="token operator">+</span> value
+
+    <span class="token keyword">def</span> <span class="token function">del_bar</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"deleter..."</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">'laowang'</span>
+
+    BAR <span class="token operator">=</span> property<span class="token punctuation">(</span>get_bar<span class="token punctuation">,</span> set_bar<span class="token punctuation">,</span> del_bar<span class="token punctuation">,</span> <span class="token string">"description..."</span><span class="token punctuation">)</span>
+
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+obj<span class="token punctuation">.</span>BAR  <span class="token comment" spellcheck="true"># 自动调用第一个参数中定义的方法：get_bar</span>
+obj<span class="token punctuation">.</span>BAR <span class="token operator">=</span> <span class="token string">"alex"</span>  <span class="token comment" spellcheck="true"># 自动调用第二个参数中定义的方法：set_bar方法，并将“alex”当作参数传入</span>
+desc <span class="token operator">=</span> Foo<span class="token punctuation">.</span>BAR<span class="token punctuation">.</span>__doc__  <span class="token comment" spellcheck="true"># 自动获取第四个参数中设置的值：description...</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>desc<span class="token punctuation">)</span>
+<span class="token keyword">del</span> obj<span class="token punctuation">.</span>BAR  <span class="token comment" spellcheck="true"># 自动调用第三个参数中定义的方法：del_bar方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于<code>类属性方式</code>创建property属性具有3种访问方式，我们可以根据它们几个属性的访问特点，分别将三个方法定义为对同一个属性：获取、修改、删除</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Goods</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 原价</span>
+        self<span class="token punctuation">.</span>original_price <span class="token operator">=</span> <span class="token number">100</span>
+        <span class="token comment" spellcheck="true"># 折扣</span>
+        self<span class="token punctuation">.</span>discount <span class="token operator">=</span> <span class="token number">0.8</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_price</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 实际价格 = 原价 * 折扣</span>
+        new_price <span class="token operator">=</span> self<span class="token punctuation">.</span>original_price <span class="token operator">*</span> self<span class="token punctuation">.</span>discount
+        <span class="token keyword">return</span> new_price
+
+    <span class="token keyword">def</span> <span class="token function">set_price</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>original_price <span class="token operator">=</span> value
+
+    <span class="token keyword">def</span> <span class="token function">del_price</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">del</span> self<span class="token punctuation">.</span>original_price
+
+    PRICE <span class="token operator">=</span> property<span class="token punctuation">(</span>get_price<span class="token punctuation">,</span> set_price<span class="token punctuation">,</span> del_price<span class="token punctuation">,</span> <span class="token string">'价格属性描述...'</span><span class="token punctuation">)</span>
+
+obj <span class="token operator">=</span> Goods<span class="token punctuation">(</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>PRICE         <span class="token comment" spellcheck="true"># 获取商品价格</span>
+obj<span class="token punctuation">.</span>PRICE <span class="token operator">=</span> <span class="token number">200</span>   <span class="token comment" spellcheck="true"># 修改商品原价</span>
+<span class="token keyword">del</span> obj<span class="token punctuation">.</span>PRICE     <span class="token comment" spellcheck="true"># 删除商品原价</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>定义property属性共有两种方式，分别是【装饰器】和【类属性】，而【装饰器】方式针对经典类和新式类又有所不同。</li>
+<li>通过使用property属性，能够简化调用者在获取数据的流程</li>
+</ul>
+<p></p></div><div class="share"><span>分享到</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=http://www.yapei97.com/2019/06/02/Property属性/%20人生印记%20Property属性" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2019/06/03/Property属性的应用/" title="Property属性的应用"><i class="fa fa-angle-double-left"></i>&nbsp;上一篇: Property属性的应用</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2018/02/08/Python套接字编程/" title="Python套接字编程">下一篇: Python套接字编程&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div><div id="lv-container" data-id="city" data-uid="MTAyMC80NTE2Ni8yMTY4Mw=="><script type="text/javascript">(function (d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') {
+        return;
+    }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script><noscript> Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://www.yapei97.com" rel="noopener noreferrer">周雅培</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;</p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

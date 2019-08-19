@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="周雅培"><title>为什么要使用封装继承多态? · 人生印记</title><meta name="description" content="封装、继承、多态封装、继承、多态 是面向对象的3大特性
+为啥要封装
+
+好处
+
+在使用面向过程编程时，当需要对数据处理时，需要考虑用哪个模板中哪个函数来进行操作，但是当用面向对象编程时，因为已经将数据存储到了这个独立的空间中，这个独立的空间（即对象）中通过一个特殊的变量（class）能够获取到类（模板"><meta name="keywords" content><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Write Code, Blow Minds.</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">雅培の人生印记</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/FriggaAZ" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a><a href="https://www.instagram.com/__limbo" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram">&nbsp;</i></a><a href="http://www.yapei97.com/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://www.yapei97.com" rel="noopener noreferrer">周雅培</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;</p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>为什么要使用封装继承多态?</a></p><p class="post-meta"><span class="date meta-item">发布于&nbsp;2019-08-19</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/Python/" title="Python" class="a-tag">Python</a><span>&nbsp;</span><a href="/tags/面向对象/" title="面向对象" class="a-tag">面向对象</a><span>&nbsp;</span></span></p><p class="post-abstract"></p><h2 id="封装、继承、多态"><a href="#封装、继承、多态" class="headerlink" title="封装、继承、多态"></a>封装、继承、多态</h2><p>封装、继承、多态 是面向对象的3大特性</p>
+<h2 id="为啥要封装"><a href="#为啥要封装" class="headerlink" title="为啥要封装"></a>为啥要封装</h2><p><img src="/2019/08/19/为什么要使用封装继承多态/QQ20171023-231854@2x.png" alt="img"></p>
+<p><img src="/2019/08/19/为什么要使用封装继承多态/QQ20171023-232657@2x.png" alt="img"></p>
+<h4 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h4><blockquote>
+<ol>
+<li>在使用面向过程编程时，当需要对数据处理时，需要考虑用哪个模板中哪个函数来进行操作，但是当用面向对象编程时，因为已经将数据存储到了这个独立的空间中，这个独立的空间（即对象）中通过一个特殊的变量（<strong>class</strong>）能够获取到类（模板），而且这个类中的方法是有一定数量的，与此类无关的将不会出现在本类中，因此需要对数据处理时，可以很快速的定位到需要的方法是谁  这样更方便</li>
+<li>全局变量是只能有1份的，多很多个函数需要多个备份时，往往需要利用其它的变量来进行储存；而通过封装 会将用来存储数据的这个变量 变为了对象中的一个“全局”变量，只要对象不一样那么这个变量就可以再有1份，所以这样更方便</li>
+<li>代码划分更清晰</li>
+</ol>
+</blockquote>
+<p>面向过程</p>
+<pre class="line-numbers language-python"><code class="language-python">全局变量<span class="token number">1</span>
+全局变量<span class="token number">2</span>
+全局变量<span class="token number">3</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token keyword">def</span> 函数<span class="token number">1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+
+<span class="token keyword">def</span> 函数<span class="token number">2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+
+<span class="token keyword">def</span> 函数<span class="token number">3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+
+<span class="token keyword">def</span> 函数<span class="token number">4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+
+<span class="token keyword">def</span> 函数<span class="token number">5</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>面向对象</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> 类<span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    属性<span class="token number">1</span>
+    属性<span class="token number">2</span>
+
+    <span class="token keyword">def</span> 方法<span class="token number">1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token keyword">def</span> 方法<span class="token number">2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> 类<span class="token number">2</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    属性<span class="token number">3</span>
+    <span class="token keyword">def</span> 方法<span class="token number">3</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token keyword">def</span> 方法<span class="token number">4</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token keyword">def</span> 方法<span class="token number">5</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="为啥要继承"><a href="#为啥要继承" class="headerlink" title="为啥要继承"></a>为啥要继承</h2><p><img src="/2019/08/19/为什么要使用封装继承多态/QQ20171023-234358@2x.png" alt="img"></p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><blockquote>
+<ol>
+<li>能够提升代码的重用率，即开发一个类，可以在多个子功能中直接使用</li>
+<li>继承能够有效的进行代码的管理，当某个类有问题只要修改这个类就行，而其继承这个类的子类往往不需要就修改</li>
+</ol>
+</blockquote>
+<h2 id="怎样理解多态"><a href="#怎样理解多态" class="headerlink" title="怎样理解多态"></a>怎样理解多态</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MiniOS</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""MiniOS 操作系统类 """</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>apps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 安装的应用程序名称列表</span>
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"%s 安装的软件列表为 %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>apps<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">install_app</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> app<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 判断是否已经安装了软件</span>
+        <span class="token keyword">if</span> app<span class="token punctuation">.</span>name <span class="token keyword">in</span> self<span class="token punctuation">.</span>apps<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"已经安装了 %s，无需再次安装"</span> <span class="token operator">%</span> app<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            app<span class="token punctuation">.</span>install<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>apps<span class="token punctuation">.</span>append<span class="token punctuation">(</span>app<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">App</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> version<span class="token punctuation">,</span> desc<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>version <span class="token operator">=</span> version
+        self<span class="token punctuation">.</span>desc <span class="token operator">=</span> desc
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"%s 的当前版本是 %s - %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>version<span class="token punctuation">,</span> self<span class="token punctuation">.</span>desc<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">install</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"将 %s [%s] 的执行程序复制到程序目录..."</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>version<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">PyCharm</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Chrome</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">install</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正在解压缩安装程序..."</span><span class="token punctuation">)</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>install<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+linux <span class="token operator">=</span> MiniOS<span class="token punctuation">(</span><span class="token string">"Linux"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>linux<span class="token punctuation">)</span>
+
+pycharm <span class="token operator">=</span> PyCharm<span class="token punctuation">(</span><span class="token string">"PyCharm"</span><span class="token punctuation">,</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span> <span class="token string">"python 开发的 IDE 环境"</span><span class="token punctuation">)</span>
+chrome <span class="token operator">=</span> Chrome<span class="token punctuation">(</span><span class="token string">"Chrome"</span><span class="token punctuation">,</span> <span class="token string">"2.0"</span><span class="token punctuation">,</span> <span class="token string">"谷歌浏览器"</span><span class="token punctuation">)</span>
+
+linux<span class="token punctuation">.</span>install_app<span class="token punctuation">(</span>pycharm<span class="token punctuation">)</span>
+linux<span class="token punctuation">.</span>install_app<span class="token punctuation">(</span>chrome<span class="token punctuation">)</span>
+linux<span class="token punctuation">.</span>install_app<span class="token punctuation">(</span>chrome<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>linux<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果</p>
+<pre class="line-numbers language-python"><code class="language-python">Linux 安装的软件列表为 <span class="token punctuation">[</span><span class="token punctuation">]</span>
+将 PyCharm <span class="token punctuation">[</span><span class="token number">1.0</span><span class="token punctuation">]</span> 的执行程序复制到程序目录<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+正在解压缩安装程序<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+将 Chrome <span class="token punctuation">[</span><span class="token number">2.0</span><span class="token punctuation">]</span> 的执行程序复制到程序目录<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+已经安装了 Chrome，无需再次安装
+Linux 安装的软件列表为 <span class="token punctuation">[</span><span class="token string">'PyCharm'</span><span class="token punctuation">,</span> <span class="token string">'Chrome'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p></p></div><div class="share"><span>分享到</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=http://www.yapei97.com/2019/08/19/为什么要使用封装继承多态/%20人生印记%20为什么要使用封装继承多态?" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2019/07/22/魔法属性/" title="魔法属性">下一篇: 魔法属性&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div><div id="lv-container" data-id="city" data-uid="MTAyMC80NTE2Ni8yMTY4Mw=="><script type="text/javascript">(function (d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') {
+        return;
+    }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script><noscript> Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://www.yapei97.com" rel="noopener noreferrer">周雅培</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;</p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
